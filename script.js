@@ -26,31 +26,17 @@ document.onreadystatechange = () => {
 };
 
 // Selects a random 3D model to be displayed within model-viewer window
-
-const astroRobotModel =
-  'https://foundryar.blob.core.windows.net/datacom-qr-code/astronaut_avatar.glb';
 const iceCreamManModel =
   'https://foundryar.blob.core.windows.net/datacom-qr-code/icecream_avatar.glb';
 
-const lunarRoverIosModel =
-  'https://foundryar.blob.core.windows.net/datacom-qr-code/LunarRover_English.reality';
-const habIosModel =
-  'https://foundryar.blob.core.windows.net/datacom-qr-code/hab_en.reality';
-const cosmonautIosModel =
-  'https://foundryar.blob.core.windows.net/datacom-qr-code/CosmonautSuit_en.reality';
 const iceCreamManIosModel =
   'https://foundryar.blob.core.windows.net/datacom-qr-code/high_poly_icecream_avatar.usdz';
 
-const array = [astroRobotModel, iceCreamManModel];
-const arrayIos = [
-  lunarRoverIosModel,
-  habIosModel,
-  cosmonautIosModel,
-  iceCreamManIosModel,
-];
+const array = [iceCreamManModel];
+const arrayIos = [iceCreamManIosModel];
 
-const chooseModel = array[getRandomInt(2)];
-const chooseIosModel = arrayIos[getRandomInt(4)];
+const chooseModel = array[0];
+const chooseIosModel = arrayIos[0];
 
 let elem = document.getElementById('model-viewer');
 
