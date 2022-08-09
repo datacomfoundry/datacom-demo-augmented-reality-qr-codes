@@ -26,14 +26,14 @@ document.onreadystatechange = () => {
 };
 
 // Selects a random 3D model to be displayed within model-viewer window
-const iceCreamManModel =
-  'https://foundryar.blob.core.windows.net/datacom-qr-code/NoW AR Model_lowpoly.glb';
+const nowRoundelModel =
+  'https://foundryar.blob.core.windows.net/datacom-qr-code/NoW AR Model_lowpoly_Animation.glb';
 
-const iceCreamManIosModel =
+const nowRoundelIosModel =
   'https://foundryar.blob.core.windows.net/datacom-qr-code/NoW AR Model_lowpoly.usdz';
 
-const array = [iceCreamManModel];
-const arrayIos = [iceCreamManIosModel];
+const array = [nowRoundelModel];
+const arrayIos = [nowRoundelIosModel];
 
 const chooseModel = array[0];
 const chooseIosModel = arrayIos[0];
