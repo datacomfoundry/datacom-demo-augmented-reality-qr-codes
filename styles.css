@@ -16,18 +16,17 @@ model-viewer {
   height: 100%;
   width: 100%;
   position: relative;
-  z-index: 99;
   --poster-color: transparent;
 }
 
-.vertical-center {
+/* .vertical-center {
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
+} */
 
 .progress-bar {
   display: block;
