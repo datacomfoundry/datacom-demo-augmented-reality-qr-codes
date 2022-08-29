@@ -1,51 +1,51 @@
 // Handles loading the events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {
-  const progressBar = event.target.querySelector('.progress-bar');
-  const updatingBar = event.target.querySelector('.update-bar');
+  const progressBar = event.target.querySelector(".progress-bar");
+  const updatingBar = event.target.querySelector(".update-bar");
 
   updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
   if (event.detail.totalProgress === 1) {
-    progressBar.classList.add('hide');
+    progressBar.classList.add("hide");
   } else {
-    progressBar.classList.remove('hide');
+    progressBar.classList.remove("hide");
     if (event.detail.totalProgress === 0) {
-      event.target.querySelector('.center-pre-prompt').classList.add('hide');
+      event.target.querySelector(".center-pre-prompt").classList.add("hide");
     }
   }
 };
-document.querySelector('model-viewer').addEventListener('progress', onProgress);
+document.querySelector("model-viewer").addEventListener("progress", onProgress);
 
 function clickButton() {
-  document.getElementById('ar-button').click();
+  document.getElementById("ar-button").click();
 }
 
 document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
+  if (document.readyState === "complete") {
     setTimeout(clickButton, 2000);
   }
 };
 
 // Selects a random 3D model to be displayed within model-viewer window
-const nowRoundelModel =
-  'https://foundryar.blob.core.windows.net/datacom-qr-code/NoW AR Model_lowpoly_Animation.glb';
+const threeDimensionalModel =
+  "https://foundryar.blob.core.windows.net/datacom-social-connectedness/3D Note.glb";
 
-const nowRoundelIosModel =
-  'https://foundryar.blob.core.windows.net/datacom-qr-code/NoW AR Model_lowpoly.usdz';
+const threeDimensionalIosModel =
+  "https://foundryar.blob.core.windows.net/datacom-social-connectedness/3D Note.usdz";
 
-const array = [nowRoundelModel];
-const arrayIos = [nowRoundelIosModel];
+const array = [threeDimensionalModel];
+const arrayIos = [threeDimensionalIosModel];
 
 const chooseModel = array[0];
 const chooseIosModel = arrayIos[0];
 
-let elem = document.getElementById('model-viewer');
+let elem = document.getElementById("model-viewer");
 
-if (getMobileOperatingSystem() == 'Android') {
-  console.log('Android', chooseModel);
+if (getMobileOperatingSystem() == "Android") {
+  console.log("Android", chooseModel);
   elem.src = chooseModel;
-} else if (getMobileOperatingSystem() == 'iOS') {
-  console.log('iOS', chooseIosModel);
-  elem.setAttribute('ios-src', chooseIosModel);
+} else if (getMobileOperatingSystem() == "iOS") {
+  console.log("iOS", arrayIos);
+  elem.setAttribute("ios-src", chooseIosModel);
 }
 
 function getRandomInt(max) {
@@ -63,17 +63,17 @@ function getMobileOperatingSystem() {
 
   // Windows Phone must come first because its UA also contains "Android"
   if (/windows phone/i.test(userAgent)) {
-    return 'Windows Phone';
+    return "Windows Phone";
   }
 
   if (/android/i.test(userAgent)) {
-    return 'Android';
+    return "Android";
   }
 
   // iOS detection from: http://stackoverflow.com/a/9039885/177710
   if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    return 'iOS';
+    return "iOS";
   }
 
-  return 'unknown';
+  return "unknown";
 }
